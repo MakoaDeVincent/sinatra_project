@@ -1,0 +1,14 @@
+<h1>Welcome <%=current_user.username%> </h1>
+<a href='/logout'><button>Log Out</button></a>
+<br><br>
+<% if @user.vinyl_records.empty? %>
+    <h3><%= "Your Virtual Milk Crate doesnt have any vinyl records in it! :(" %></h3>
+    <button><a href='/vinyl_records/new'>Add A Vinyl Record</a></button>
+<% else %>
+    <h2>Your Virtual Milk Crate!</h2>
+    <% @user.vinyl_records.each do |vinyl| %>
+        <% #add a way to click the album to view it %>
+        <%= vinyl.artist %>
+        <%= vinyl.album %>
+    <% end %>
+<% end %>
