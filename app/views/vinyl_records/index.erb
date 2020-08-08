@@ -6,10 +6,10 @@
     <button><a href='/vinyl_records/new'>Add A Vinyl Record</a></button>
 <% else %>
     <h2>Your Virtual Milk Crate!</h2>
+    <p>Click on a vinyl record to view more details, edit the record, or delete the record</p>
     <% @user.vinyl_records.each do |vinyl| %>
-        <% #add a way to click the album to view it %>
-        <%= vinyl.artist %>
-        <%= vinyl.album %>
+       
+        <a href='/vinyl_records/<%= vinyl.id %>'> <%= vinyl.artist %> - <%= vinyl.album %></a>
         <br><br>
     <% end %>
     <br><br>

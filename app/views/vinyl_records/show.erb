@@ -1,0 +1,18 @@
+<a href='/vinyl_records' class="button"> Go Back to your collection </a>
+<br><br>
+<h1><%= @vinyl_record.artist %></h1>
+<br>
+<h2><%= @vinyl_record.album %></h2>
+<br>
+<h3>Genre: <%= @vinyl_record.genre %></h3>
+<br>
+<h3>Year: <%= @vinyl_record.year %></h3>
+<br><br>
+<% if current_user.id == @vinyl_record.user_id %>
+    <a href='/vinyl_records/<%= @vinyl_record.id %>/edit' class="button">Edit</a>
+    <br><br>
+    <form method='post' action='/vinyl_records/<%= @vinyl_record.id %>'>
+        <input type='hidden' name='_method' value='delete'>
+        <button><input type='submit' value='DELETE THIS VINYL RECORD'></button>
+    </form
+<% end %>

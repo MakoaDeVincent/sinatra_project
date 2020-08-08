@@ -1,0 +1,21 @@
+<a href='/vinyl_records' class="button"> Go Back to your collection </a>
+<br><br>
+
+<h2>Editing Your <%= @vinyl_record.album %> Album</h2>
+<br><br>
+<form method='post' action='/vinyl_records/<%= @vinyl_record.id %>'>
+    <input type='hidden' name='_method' value='patch'>
+        <label>Artist: </label>
+        <input type='text' value='<%= @vinyl_record.artist %>' name='artist' required>
+        <br><br>
+        <label>Album: </label>
+        <input type='text' value='<%= @vinyl_record.album %>' name='album' required>
+        <br><br>
+        <label>Genre: </label>
+        <input type='text' value='<%= @vinyl_record.genre %>' name='genre' required>
+        <br><br>
+        <label>Year Released: </label>
+        <input type='number' min='1900' max='2020' step='1' value='<%= @vinyl_record.year %>' name='year' required>
+        <br><br>
+    <input type='submit' value='Edit this vinyl'>
+</form>
