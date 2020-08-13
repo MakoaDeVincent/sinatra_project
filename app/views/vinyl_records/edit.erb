@@ -3,7 +3,7 @@
 
 <h2>Editing Your <%= @vinyl_record.album %> Album</h2>
 <br><br>
-<form method='post' action='/vinyl_records/<%= @vinyl_record.id %>'>
+<form method='post' action='/vinyl_records/<%= @vinyl_record.id %>' autocomplete="off">
     <input type='hidden' name='_method' value='patch'>
         <label>Artist: </label>
         <input type='text' value='<%= @vinyl_record.artist %>' name='artist' required>
